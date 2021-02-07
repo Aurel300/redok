@@ -1,0 +1,33 @@
+{
+  // content path
+  contentPath: "../content",
+  // output path
+  outputPath: "../build",
+  // project title (used for the top-left header)
+  projectTitle: "foobar",
+  // document title (used to HTML titles)
+  documentTitle: "foobar manual",
+  // repository URL
+  repository: "https://github.com/ghost/foobar/",
+  // contribute URL base
+  contribute: "https://github.com/ghost/foobar/blob/gh-pages-src/source/content/",
+  // copyright for the footer
+  copyright: "&copy; 2019-2021 Somebody",
+  // link handlers
+  linkHandlers: [
+    {
+      startsWith: "issue:",
+      href: "https://github.com/ghost/foobar/issues/$1",
+      ext: true,
+    }, {
+      startsWith: "repo:",
+      endsWith: "/",
+      ext: true,
+      href: "https://github.com/ghost/foobar/tree/master/$1",
+    }, {
+      startsWith: "repo:",
+      ext: true,
+      href: "https://github.com/ghost/foobar/blob/master/$1",
+    },
+  ],
+}
