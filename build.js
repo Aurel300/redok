@@ -98,7 +98,7 @@ function render({menu, pages, labels}, dir) {
     let ext = false;
     let handled = false;
     for (let handler of config.linkHandlers) {
-      let strippedHref = href;
+      let strippedHref = anchor[0];
       if (handler.startsWith) {
         if (!strippedHref.startsWith(handler.startsWith))
           continue;
@@ -112,6 +112,9 @@ function render({menu, pages, labels}, dir) {
       handled = true;
       ext = handler.ext || false;
       href = handler.href.replace("$1", strippedHref);
+      if (anchor.length > 1) {
+        href = `${href}#${anchor[1]}`;
+      }
       break;
     }
     if (!handled) {
